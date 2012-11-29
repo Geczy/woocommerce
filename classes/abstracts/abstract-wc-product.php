@@ -1016,22 +1016,22 @@ abstract class WC_Product {
 
 		// Get the posts
 		$related_posts = get_posts( apply_filters('woocommerce_product_related_posts', array(
-			'orderby' 		=> 'rand',
-			'posts_per_page'=> $limit,
-			'post_type' 	=> 'product',
-			'fields' 		=> 'ids',
-			'meta_query' 	=> $meta_query,
-			'tax_query' 	=> array(
-				'relation' => 'OR',
+			'orderby'        => 'rand',
+			'posts_per_page' => $limit,
+			'post_type'      => 'product',
+			'fields'         => 'ids',
+			'meta_query'     => $meta_query,
+			'tax_query'      => array(
+				'relation'   => 'OR',
 				array(
-					'taxonomy' 	=> 'product_cat',
-					'field' 	=> 'id',
-					'terms' 	=> $cats_array
+					'taxonomy' => 'product_cat',
+					'field'    => 'id',
+					'terms'    => $cats_array
 				),
 				array(
-					'taxonomy' 	=> 'product_tag',
-					'field' 	=> 'id',
-					'terms' 	=> $tags_array
+					'taxonomy' => 'product_tag',
+					'field'    => 'id',
+					'terms'    => $tags_array
 				)
 			)
 		) ) );

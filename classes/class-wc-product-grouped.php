@@ -35,28 +35,28 @@ class WC_Product_Grouped extends WC_Product {
 
 		// Load data from custom fields
 		$this->load_product_data( array(
-			'sku'			=> '',
-			'downloadable' 	=> 'no',
-			'virtual' 		=> 'no',
-			'price' 		=> '',
-			'visibility'	=> 'hidden',
-			'stock'			=> 0,
-			'stock_status'	=> 'instock',
-			'backorders'	=> 'no',
-			'manage_stock'	=> 'no',
-			'sale_price'	=> '',
-			'regular_price' => '',
-			'weight'		=> '',
-			'length'		=> '',
-			'width'		=> '',
-			'height'		=> '',
-			'tax_status'	=> 'taxable',
-			'tax_class'		=> '',
-			'upsell_ids'	=> array(),
-			'crosssell_ids' => array(),
+			'sku'                   => '',
+			'downloadable'          => 'no',
+			'virtual'               => 'no',
+			'price'                 => '',
+			'visibility'            => 'hidden',
+			'stock'                 => 0,
+			'stock_status'          => 'instock',
+			'backorders'            => 'no',
+			'manage_stock'          => 'no',
+			'sale_price'            => '',
+			'regular_price'         => '',
+			'weight'                => '',
+			'length'                => '',
+			'width'                 => '',
+			'height'                => '',
+			'tax_status'            => 'taxable',
+			'tax_class'             => '',
+			'upsell_ids'            => array(),
+			'crosssell_ids'         => array(),
 			'sale_price_dates_from' => '',
-			'sale_price_dates_to' 	=> '',
-			'featured'		=> 'no'
+			'sale_price_dates_to'   => '',
+			'featured'              => 'no'
 		) );
 
 		$this->check_sale_price();
@@ -266,13 +266,13 @@ class WC_Product_Grouped extends WC_Product {
 		if (!$post_parent) return;
 
 		$children_by_price = get_posts( array(
-			'post_parent' 	=> $post_parent,
-			'orderby' 	=> 'meta_value_num',
-			'order'		=> 'asc',
-			'meta_key'	=> '_price',
+			'post_parent'    => $post_parent,
+			'orderby'        => 'meta_value_num',
+			'order'          => 'asc',
+			'meta_key'       => '_price',
 			'posts_per_page' => 1,
-			'post_type' 	=> 'product',
-			'fields' 		=> 'ids'
+			'post_type'      => 'product',
+			'fields'         => 'ids'
 		));
 		if ($children_by_price) :
 			foreach ($children_by_price as $child) :
